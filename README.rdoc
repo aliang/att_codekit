@@ -1,4 +1,4 @@
-= att_wrapper
+= ruby_wrapper
 
 The AT&T API Developer Program has RESTful APIs that provide a variety of services like In-App Payments and SMS messages.
 
@@ -34,7 +34,7 @@ status = a.getTransactionStatus("TransactionAuthCode","ABCDEF12345")
 
 
 
-== Contributing to att_wrapper
+== Contributing to ruby_wrapper
  
 * Check out the latest master to make sure the feature hasn't been implemented or the bug hasn't been fixed yet.
 * Check out the issue tracker to make sure someone already hasn't requested it and/or contributed it.
