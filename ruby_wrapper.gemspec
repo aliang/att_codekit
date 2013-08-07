@@ -22,7 +22,6 @@ Gem::Specification.new do |s|
     "README.rdoc",
     "Rakefile",
     "VERSION",
-    "lib/.DS_Store",
     "lib/ruby_wrapper.rb",
     "ruby_wrapper.gemspec"
   ]
