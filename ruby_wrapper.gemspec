@@ -13,19 +13,18 @@ Gem::Specification.new do |s|
   s.description = "A simple interface for using the AT&T Platform APIs.  All you need is your client_id and client and a bit of code."
   s.email = "rh8730@att.com"
   s.extra_rdoc_files = [
-    "LICENSE.txt",
     "README.rdoc"
   ]
   s.files = [
+    ".ruby-version",
     "Gemfile",
     "Gemfile.lock",
-    "LICENSE.txt",
     "README.rdoc",
     "Rakefile",
     "VERSION",
-    "att_wrapper.tmproj",
     "lib/.DS_Store",
-    "lib/ruby_wrapper.rb"
+    "lib/ruby_wrapper.rb",
+    "ruby_wrapper.gemspec"
   ]
   s.homepage = "https://github.com/attdevsupport/"
   s.licenses = ["MIT"]
