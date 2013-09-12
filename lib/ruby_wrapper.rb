@@ -371,10 +371,16 @@ module RubyWrapper
       formatted_addresses = addresses.map { |a| a.start_with?("tel:") ? a : "tel:#{a}" }
       
       body = "{ 'outboundSMSRequest' :  { 'address':"
-      body = body + "['" + formatted_addresses.join("','") + "'],"
+      if formatted_addresses.length == 1
+        body = body + "'" + formatted_addresses[0] + "',"
+      else
+        body = body + "['" + formatted_addresses.join("','") + "'],"
+      end
       body = body + "'message':'#{message}'"
       body = body + "}}"
 
+      STDERR.puts "SendSMS: body=#{body.inspect}"
+      
       uri = URI::HTTPS.build({:host => @endpoint_host, :path => "/sms/v3/messaging/outbox"})
 
       request = Net::HTTP::Post.new( uri.request_uri, 
