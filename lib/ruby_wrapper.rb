@@ -357,6 +357,38 @@ module RubyWrapper
     JSON.parse(result)
   end
 
+  ##########################
+  # SMS
+  ##########################
+
+    def sendSMS(addresses, message)
+    
+      raise "Addresses are required" if addresses.nil? or !addresses.kind_of?(Array) or addresses.length == 0
+      raise "Message required" if message.nil? or message.message.empty?
+    
+      getAccessToken if @access_token == nil
+
+      formatted_addresses = addresses.map { |a| a.start_with?("tel:") ? a : "tel:#{a}" }
+      
+      body = "{ 'outboundSMSRequest' :  { 'address':"
+      body = body + "['" + formatted_addresses.join("','") + "'],"
+      body = body + "'message':'#{message}'"
+      body = body + "}}"
+
+      uri = URI::HTTPS.build({:host => @endpoint_host, :path => "/sms/v3/messaging/outbox"})
+
+      request = Net::HTTP::Post.new( uri.request_uri, 
+        initheader = {'Accept' => 'application/json', 
+          'Authorization' => "BEARER #{@access_token}", 
+          "Content-type" => 'application/json'
+       } )
+
+      request.body = body
+
+      result = doHttpRequest(uri,request).body
+      JSON.parse(result)
+    end
+
 
 
 ##########################

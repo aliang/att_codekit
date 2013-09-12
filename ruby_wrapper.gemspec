@@ -5,11 +5,11 @@
 
 Gem::Specification.new do |s|
   s.name = "ruby_wrapper"
-  s.version = "0.1.0"
+  s.version = "0.1.1"
 
   s.required_rubygems_version = Gem::Requirement.new(">= 0") if s.respond_to? :required_rubygems_version=
   s.authors = ["Richard Harrington"]
-  s.date = "2013-08-07"
+  s.date = "2013-09-12"
   s.description = "A simple interface for using the AT&T Platform APIs.  All you need is your client_id and client and a bit of code."
   s.email = "rh8730@att.com"
   s.extra_rdoc_files = [
