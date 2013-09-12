@@ -364,7 +364,7 @@ module RubyWrapper
     def sendSMS(addresses, message)
     
       raise "Addresses are required" if addresses.nil? or !addresses.kind_of?(Array) or addresses.length == 0
-      raise "Message required" if message.nil? or message.message.empty?
+      raise "Message required" if message.nil? or message.empty?
     
       getAccessToken if @access_token == nil
 
