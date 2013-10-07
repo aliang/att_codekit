@@ -4,7 +4,8 @@ require "net/http"
 require "uri"
 require "resolv"
 
-module RubyWrapper 
+module ATTCodekit
+  VERSION = "0.1.3"
 
   class Client 
 
